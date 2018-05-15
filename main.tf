@@ -91,7 +91,7 @@ locals {
 }
 
 resource "digitalocean_tag" "vpn-node" {
-  name = "vpn"
+  name = "${terraform.workspace == "default" ? "vpn" : "vpn-${terraform.workspace}"}"
 }
 
 module "do-node" {
@@ -101,8 +101,8 @@ module "do-node" {
   node_count  = "${var.node_count}"
   #user_data   = "${data.template_file.user-data.rendered}"
   user_data   = ""
-  node_type   = "${terraform.workspace == "default" ? "do" : "do-dev"}"
-  tags        = "${digitalocean_tag.vpn-node.id}"
+  node_type   = "${terraform.workspace == "default" ? "do" : "do-${terraform.workspace}"}"
+  tags        = "${digitalocean_tag.vpn-node.name}"
   zone_id     = "${data.aws_route53_zone.selected.zone_id}"
   zone_name   = "${data.aws_route53_zone.selected.name}"
   project_dir = "${var.project_dir}"
@@ -144,7 +144,7 @@ resource "null_resource" "docker-compose" {
 }
 
 resource "digitalocean_firewall" "default" {
-  name = "Default"
+  name = "${terraform.workspace == "default" ? "Default" : "${terraform.workspace}"}"
 
   tags = ["${digitalocean_tag.vpn-node.name}"]
 
