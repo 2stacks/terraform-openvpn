@@ -8,7 +8,6 @@ variable "project_dir" {
 
 variable "image" {
   description = "DO SSH Key used for Provisioning"
-  default     = "ubuntu-16-04-x64"
 }
 
 variable "region" {
@@ -17,7 +16,6 @@ variable "region" {
 
 variable "size" {
   description = "DO instance size"
-  default     = "512mb"
 }
 
 variable "private_networking" {

@@ -97,7 +97,9 @@ resource "digitalocean_tag" "vpn-node" {
 module "do-node" {
   source      = "./modules/do_node"
   ssh_keys    = "${var.do_ssh_keys}"
-  region      = "${var.do_nyc3}"
+  image       = "${var.image}"
+  region      = "${var.region}"
+  size        = "${terraform.workspace == "default" ? "1gb" : "512mb"}"
   node_count  = "${var.node_count}"
   #user_data   = "${data.template_file.user-data.rendered}"
   user_data   = ""
