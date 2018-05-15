@@ -26,8 +26,27 @@ There are many.  I will continue to improve this list and add detail as time per
     *   Docker Compose
     *   Docker Machine
 *   Other Stuff
-    *   SSH Keys
+    *   Secrets
     *   Container Prerequisites
+
+## Secrets
+The following required variables can be stored in a [secret.auto.tfvars](https://www.terraform.io/intro/getting-started/variables.html) file in the root directory.
+```
+# Terraform Digital Ocean API Key
+variable "do_token" {}
+
+# Digital Ocean SSH Keys
+variable "do_ssh_keys" {}
+
+# AWS API credentials
+variable "aws_access_key" {}
+variable "aws_secret_key" {}
+
+# CloudInit Variables
+variable "user_name" {}
+variable "user_passwd" {}
+variable "ssh_authorized-key" {}
+```
 
 ## Container Prerequisites
 The OpenVPN and FreeRadius containers used by this package are maintained by me and are publicly available.  Please see each containers documentation for prerequisites and dependencies.
