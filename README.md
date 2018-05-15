@@ -64,3 +64,15 @@ terraform init
 terraform plan
 terraform apply
 ```
+
+## Support for Terraform Workspaces
+This allows creating a parallel development server for testing updates and Changes.
+
+```bash
+git branch dev
+terraform workspace new dev
+terraform init -upgrade
+terraform plan
+terraform apply
+```
+Note: this will create an additional server whose host name is tagged with 'dev'

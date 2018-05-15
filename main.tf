@@ -101,7 +101,7 @@ module "do-node" {
   node_count  = "${var.node_count}"
   #user_data   = "${data.template_file.user-data.rendered}"
   user_data   = ""
-  node_type   = "do"
+  node_type   = "${terraform.workspace == "default" ? "do" : "do-dev"}"
   tags        = "${digitalocean_tag.vpn-node.id}"
   zone_id     = "${data.aws_route53_zone.selected.zone_id}"
   zone_name   = "${data.aws_route53_zone.selected.name}"
