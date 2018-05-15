@@ -1,0 +1,16 @@
+.terraform/
+./*.tfstate
+.*.swp
+.idea
+*~
+*.backup
+*.log
+*.bak
+*.iml
+*.test
+backup/
+modules-dev/
+example.tf
+secret.*
+terraform.tfplan
+terraform.tfstate
