@@ -9,8 +9,12 @@
 *.iml
 *.test
 backup/
-modules-dev/
+configs/ovpn/*.conf
+configs/ovpn/*.crt
+configs/ovpn/*.dh
+configs/ovpn/*.key
 example.tf
+modules-dev/
 secret.*
 terraform.tfplan
 terraform.tfstate

@@ -37,7 +37,7 @@ resource "digitalocean_droplet" "do-node" {
 
   # Copies the configs folder to ${var.project_dir}
   provisioner "file" {
-    source      = "${var.project_dir}/configs"
+    source      = "./configs"
     destination = "${var.project_dir}"
   }
 
