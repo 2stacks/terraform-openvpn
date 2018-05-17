@@ -138,9 +138,8 @@ resource "null_resource" "docker-compose" {
 
   provisioner "remote-exec" {
     inline = [
-      "cd ${var.project_dir} && docker-compose -f docker-compose.yml up -d",
-      "sleep 5",
-      "rm -rf ${var.project_dir}/docker-compose.yml",
+      "cd ${var.project_dir}",
+      "docker-compose pull && docker-compose up -d",
     ]
   }
 }
