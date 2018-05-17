@@ -32,6 +32,7 @@ services:
       - DB_USER=${mysql_user}
       - DB_PASS=${mysql_passwd}
       - DB_PORT=3306
+      - RADIUS_KEY=${radius_key}
       - RAD_CLIENTS=${radius_clients}
       - RAD_DEBUG=${rad_debug}
     depends_on:
