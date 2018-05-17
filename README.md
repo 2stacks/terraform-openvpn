@@ -78,3 +78,15 @@ terraform plan
 terraform apply
 ```
 Note: this will create an additional server whose host name is tagged with 'dev'
+
+## To Do
+*   Use secrets management instead of ENV Variables
+*   Use local-exec call to docker-compose instead of remote-exec
+
+## FAQ
+*   Why execute docker-compose with remote-exec?  
+    *   When I first developed this there was a bug in Terraform that prevented passing ENV variables to local-exec.  Now that it has been resolved I need to update main.tf to pass docker-machine connection variables to local-exec prior to local-exec call docker-compose.
+
+
+*   Why use docker-machine and docker-compose instead of the native Terraform Docker provider? Seems rather janky.  
+    *   Terraform doesn't support updating the Docker Provider during execution so there's no good way to use native Docker support with a remote server that hasn't been created yet.  Since I'm already using docker-machine to install Docker on the newly created resources it just made sense.
