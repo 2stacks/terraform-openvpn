@@ -41,6 +41,13 @@ resource "digitalocean_droplet" "do-node" {
     destination = "${var.project_dir}"
   }
 
+  # Protect container configs and volumes
+  provisioner "remote-exec" {
+    inline = [
+      "chmod 700 ${var.project_dir}",
+    ]
+  }
+
   provisioner "local-exec" {
     command = "docker-machine create --driver generic --generic-ip-address=${self.ipv4_address} --generic-ssh-key ~/.ssh/do_rsa --generic-ssh-user=root ${format("${var.region}-${var.node_type}-%02d", count.index + 1)}"
   }
