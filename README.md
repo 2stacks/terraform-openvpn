@@ -47,7 +47,7 @@ variable "user_name" {}
 variable "user_passwd" {}
 variable "ssh_authorized-key" {}
 ```
-Production variables for Docker Containers should also be stored here to overide the defaults provided in 'docker-vars.tf'
+Production variables for Docker Containers should also be stored here to override the defaults provided in 'docker-vars.tf'
 
 ## Container Prerequisites
 The OpenVPN and FreeRadius containers used by this package are maintained by me and are publicly available.  Please see each containers documentation for prerequisites and dependencies.
