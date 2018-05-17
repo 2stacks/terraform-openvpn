@@ -77,7 +77,7 @@ data "template_file" "docker-host" {
 }
 
 data "aws_route53_zone" "selected" {
-  name = "bsptn.xyz."
+  name = "${var.dns_zone}"
 }
 
 data "http" "my-ip" {

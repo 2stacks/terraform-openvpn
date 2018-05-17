@@ -1,7 +1,7 @@
 ## Docker Compose Version
 variable "compose_ver" {
-    description = "docker-compose version"
-    default     = "1.21.2"
+  description = "docker-compose version"
+  default     = "1.21.2"
 }
 
 ## MySQL Variables
@@ -53,7 +53,7 @@ variable "radius_clients" {
 
 variable "rad_debug" {
   description = "Set to 'yes' to Enable Container Logs"
-  default     = "yes"
+  default     = "no"
 }
 
 ## OpenVPN Variables
@@ -79,5 +79,5 @@ variable "dns_host2" {
 
 variable "ovpn_debug" {
   description = "Set to 'yes' to Enable Container Logs"
-  default     = "yes"
+  default     = "no"
 }

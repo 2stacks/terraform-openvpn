@@ -1,5 +1,5 @@
 # See Digital Ocean API Documentation
-# @ <https://developers.digitalocean.com/documentation/v2/> 
+# @ <https://developers.digitalocean.com/documentation/v2/>
 # for determining available images, regions and sizes.
 
 # Terraform Digital Ocean API Key
@@ -17,10 +17,16 @@ variable "ssh_authorized-key" {}
 # Digital Ocean SSH Keys
 variable "do_ssh_keys" {}
 
-# Directory of additional container configs
+# Upload directory for container configs
 variable "project_dir" {
   description = "Docker Project Directory"
   default     = "/opt/project-k"
+}
+
+# AWS Hosted DNS Zone
+variable "dns_zone" {
+  description = "AWS Hosted DNS Zone"
+  default     = "bsptn.xyz."
 }
 
 # Default OS Images
