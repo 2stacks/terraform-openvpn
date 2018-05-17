@@ -72,6 +72,7 @@ This allows creating a parallel development server for testing updates and chang
 ```bash
 git branch dev
 terraform workspace new dev
+terraform workspace select dev
 terraform init -upgrade
 terraform plan
 terraform apply

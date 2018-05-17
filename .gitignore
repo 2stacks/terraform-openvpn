@@ -9,6 +9,7 @@
 *.iml
 *.test
 backup/
+configs/mysql/radius.sql
 configs/ovpn/*.conf
 configs/ovpn/*.crt
 configs/ovpn/*.dh
