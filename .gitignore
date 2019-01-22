@@ -1,13 +1,12 @@
 .terraform/
-./*.tfstate
 .*.swp
 .idea
 *~
 *.backup
 *.log
 *.bak
-*.iml
 *.test
+*.tfstate
 backup/
 configs/mysql/radius.sql
 configs/ovpn/*.conf
@@ -18,5 +17,4 @@ example.tf
 modules-dev/
 secret.*
 terraform.tfplan
-terraform.tfstate
 terraform.tfstate.d/
